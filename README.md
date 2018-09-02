@@ -1,6 +1,13 @@
-# MACodeTest
-[Summary](#summary)
+# Market America Code Test - Matthew Murtagh
 
+
+* [Summary](#summary)
+* [Target Platform](#target-platform)
+* [Build](#build)
+* [High Level Technical Overview](#high-level-technical-overview)
+* [Design Process and Project Requirements](#design-process-and-project-requirements)
+* [Strengths](#strengths)
+* [Limitations](#limitations)
 
 ## Summary
 
