@@ -27,6 +27,70 @@ The application, while built in react native, was only tested and designed to be
 
     `$ react-native run-android`
     
+## High Level Technical Overview
+   
+The application is generally split into two types of files:
+### Components
+  These are react native component files that render/style JSX and maintain the state of the application.
+  
+#### App.js
+  
+* The highest level wrapper component for all other components
+* Maintains the game screen state which determines which of the other screen components are rendered
+* Kicks off the loading of the vibration settings from AsyncStorage and the fetching of the game data via the shop.com search API
+
+  
+#### Game.js
+  
+  * The component responsible for rendering and maintaining the state of the game screen.
+  * Manipulates state to show relevant question data and has functions to progress the game forward
+  * Responsible for querying the shop.com product API.
+
+#### IntroScreen.js
+
+  * The component responsible for rendering and mainining the state of the intro screen
+  * Responsible for interacting with Settings.js to save vibration settings.
+  
+  
+#### GameEndScreen.js
+  
+  * The component responsible for rendering the post game screen
+  
+#### LoadingScreen.js
+
+  * The component responsible for rendering the loading screen consisting of an ActivityIndicator
+  
+#### InstructionsModal.js
+
+  * Component responsible for rendering the instructions modal popup triggered by the "Instructions" button on the intro screen
+
+#### PostQuestionModal.js
+
+  * Component responsible for rendering the post question modal triggered by answering a question in the Game screen
+  * Conditionally loads different button text and triggers different game-progressing functions depending on the question number
+  * Contains a shop button that links to the shop.com product page
+  
+### Utility
+  These are various files containing functions/constants for general application utility.
+  
+#### Constants.js
+
+  * Contains constants usable throughout the app
+  * Abstracts away all user viewed strings into constants to be referenced instead of hard coding
+  * Contains functions to generate user viewed strings
+  
+#### Fetcher.js
+
+  * Contains functions used to fetch data from the shop.com search and product APIs
+  
+#### Settings.js
+  
+  * Contains functions used to load/save the apps vibration settings using AsyncStorage
+  
+#### Vibrator.js
+
+  * Contains a function used to appropriately vibrate the device with respect to the vibration settings and whether or not the question was answered correctly.
+  
 ## Design Process and Project Requirements
 
 I started out my design process by investigating the various shop.com developer APIs. I manually investigated the JSON that was returned from the search and product APIs and noticed several interesting pieces of data: caption, imageURI, price, and productLink. From these I imagined a simple game in which you could guess the price of a product given the name and picture, and ran with the idea from there.
