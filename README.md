@@ -31,7 +31,7 @@ The application, while built in react native, was only tested and designed to be
    
 The application is generally split into two types of files:
 ### Components
-  These are react native component files that render/style JSX and maintain the state of the application found in the ./components subfolder
+  These are react native component files that render/style JSX and maintain the state of the application found in the `./components` subfolder
   
 #### App.js
   
@@ -71,7 +71,7 @@ The application is generally split into two types of files:
   * Contains a shop button that links to the shop.com product page
   
 ### Utility
-  These are various files containing functions/constants for general application utility found in the ./utility subfolder
+  These are various files containing functions/constants for general application utility found in the `./utility` subfolder
   
 #### Constants.js
 
