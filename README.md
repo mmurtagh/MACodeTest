@@ -14,4 +14,4 @@ The application, while built in react native, was only tested and designed to be
 # Build
 
 1. Navigate to your project folder and clone the git repository
-'git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY'
+`$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY`
