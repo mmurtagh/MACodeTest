@@ -49,13 +49,28 @@ I also tried to implement in some native features in a way that didn't seem forc
     
     If the application fails to load data from the shop.com search API (due to networking issues) the application is reverted back to       the intro screen. This could be confusing for the user, so I used an Android Toast message to say "Could not load game data." in         this case.
     
+## Strengths
+
+* **Complete Application**
+
+  My application is intuitive and somewhat fun to use. It is a complete application and there doesn't seem to be any piece missing. Everything flows logically and smoothly.
+  
+* **Modual and Reusable Code**
+
+  I structured my files to be modual, intuitive, and reusable. The Constants file extracts all of the user displayed strings abstract away all hardcoded strings for easy maintainence, debugging, and possible tranlsation. The other utility classes abstract cumbersome logic away from the flow of the app logic and keeps the code readable and maintainable. Furthermore, the components classes all encapsulate a single component and their use case is clear and concise. 
+  
+* **Takes Advantage of Mobile Platform**
+
+  I made an effort to not only make my application run on a mobile platform, but to make it feel like it belongs running on a mobile platform. It isn' simply a web application that can run on your phone; I used design, styling, and native mobile features to make the application feel litke it belongs running on a mobile device.
+    
 ## Limitations
 
-* **Slow picture loading**
+* **Slow Picture Loading**
 
    For some reason, Image components linked to the imageURI returned from the shop.com search API load noticably slow. I tried setting      the defaultSource property on the image to a loading image to make the app feel more responsive, but it doesn't seem to work on          Android builds. In future iterations, the loading problem should be investigated more and a solution for the placeholder image should    be found (there seems to be several 3rd party libraries addressing this issue, but I did not look into them heavily).
-
 * **Limited Categories**
 
    There are 5 search terms used to determine the category of an individual game: furniture, electronics, vitamins, hiking, and kids        toys. It would be optimal to allow to user to specify their own category, but I don't quite understand the data promises (especially    for the searchItems category) made from the search API and how to handle exceptions gracefully. For example, searching for shoes        returns an empty searchItems object.
+* **Lack of Framework**
 
+  I didn't use a framework such as Redux in this application. While I tried to make the code as modular and reusable as possible, it won't scale as well and the data flow is somewhat arbitrary to my personal coding style.
